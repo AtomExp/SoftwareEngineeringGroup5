@@ -741,8 +741,7 @@ hr {
 }
 
 #Modal .Continue {
-  position: fixed;
-  bottom: 10px;
+  
   margin-top: auto;
   padding: 16px 0 0;
   width: 100vw;
