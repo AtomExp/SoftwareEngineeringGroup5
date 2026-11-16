@@ -1,0 +1,2 @@
+package brilliantburger;
+public class OrderingController {private Menu menu=new Menu();private ShoppingCart cart=new ShoppingCart();private OrderService orders=new OrderService();public void onAddItem(int itemId,int qty){MenuItem x=menu.findItem(itemId);if(x!=null)cart.addItem(new CartItem(x,qty,java.util.List.of()));}public void onUpdateCart(int itemId,int qty){cart.updateQuantity(itemId,qty);}public Order onSubmitOrder(){return orders.createOrder(cart);}}
