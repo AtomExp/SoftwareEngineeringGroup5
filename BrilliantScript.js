@@ -60,7 +60,7 @@ function initMenu() {
 
     */
   // THIS IS THE PROPER DATABASE, HOWEVER IT NEEDS PICTURES
-  fetch("data/menu.json")
+  fetch("menu.json")
   .then(response => response.json())
   .then(data => {
     recipes = data.recipes;
