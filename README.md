@@ -1,1 +1,1 @@
-For the web side of this the site was built with ipad/kisok as the mane viewport . to replicate that right click and click inspect . use crome browser tools to change the viewport in the top to Ipad 13
+For the web side of this the site was built with ipad/kisok as the main viewport . to replicate that right click and click inspect . use crome browser tools to change the viewport in the top to Ipad 13
