@@ -30,7 +30,7 @@ function initMenu() {
     });
   }
 
-  /* MODAL CLOSE (X) */
+  /* it just adds an X because i sisnt feel like styling it  */
   function closeModal() {
     modal.style.display = "none";
   }
@@ -44,6 +44,7 @@ function initMenu() {
     "font-size:28px;line-height:1;cursor:pointer;";
   closeBtn.onclick = closeModal;
   modal.prepend(closeBtn);
+  /* totally got the css from chat full transparency  */
 
   /* DATA (DummyJSON for now; swap in your own domain later) */
   fetch("https://dummyjson.com/recipes?limit=50")
@@ -72,14 +73,14 @@ function initMenu() {
   }
 
   /* CATEGORY FILTERING */
-  document.querySelectorAll("#FoodGenres #GenreSelector").forEach(category => {
+  document.querySelectorAll("#FoodFilter #GenreSelector").forEach(category => {
     category.onclick = () => {
       const name = category.textContent.toLowerCase();
 
       if (name.includes("meals")) {
         displayFood(recipes);
       }
-      else if (name.includes("chicken")) {
+      else if (name.includes("Chicken")) {
         displayFood(recipes.filter(food =>
           food.tags.some(tag => tag.toLowerCase().includes("chicken")) ||
           food.name.toLowerCase().includes("chicken")
@@ -101,21 +102,20 @@ function initMenu() {
           food.tags.some(tag => tag.toLowerCase().includes("side"))
         ));
       }
-      else if (name.includes("drinks")) {
+      else if (name.includes("drink")) {
         displayFood([]);
       }
     };
   });
 
-  /* OPEN MODAL */
   function openModal(food) {
     selectedFood = food;
 
     modal.querySelector("h1").textContent = food.name;
     modal.querySelector("h3").textContent = food.ingredients.join(", ");
     modal.querySelector("#Price").textContent = "$" + getPrice(food).toFixed(2);
+    modal.querySelector("img").src = food.image;
     modal.querySelector("#Adjuster #value").textContent = "1";
-
     modal.style.display = "block";
   }
 
